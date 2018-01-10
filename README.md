@@ -1,24 +1,3 @@
-# README
+This app shows how to get some data and display it from the Steemit blockchain, using the excellent `radiator` gem from @inertia on steem. Radaitor is available here: https://github.com/inertia186/radiator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Follow me on Steemit @xenetics for more tutorials on Steemit development, blogs about life in Japan, and various other topics!
