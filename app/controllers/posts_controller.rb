@@ -1,5 +1,6 @@
 require 'radiator'
 require 'pp'
+require 'time'
 
 class PostsController < ApplicationController
   helper_method :seconds_to_units

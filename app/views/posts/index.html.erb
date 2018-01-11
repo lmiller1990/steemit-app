@@ -5,30 +5,32 @@
   <table class="bordered">
     <tr>
       <th>author</th>
-      <th>category</th>
       <th>title</th>
       <th>created</th>
-      <th>active</th>
       <th>cashout_time</th>
-      <th>cashout_time_raw</th>
-      <th>total_vote_weight</th>
-      <th>pending_payout_value</th>
-      <th>total_pending_payout_value</th>
     </tr>
 
     <% follower[:posts].result.each do |discussion| %>
       <tr>
         <td><%= discussion.author %></td>
-        <td><%= discussion.category %></td>
         <td><a href="https://steemit.com<%= discussion.url %>"><%= discussion.title %></a></td>
-        <td><%= discussion.created.to_time %></td>
-        <td><%= discussion.active.to_time %></td>
-        <td><%= discussion.cashout_time.to_time %></td>
-        <td><%= discussion.cashout_time %></td>
-        <td><%= discussion.total_vote_weight %></td>
-        <td><%= discussion.pending_payout_value %></td>
-        <td><%= discussion.total_pending_payout_value %></td>
+        <td class="created" id="<%= discussion.title %>"><%= discussion.created.to_time %></td>
+        <td class="payout"><%= discussion.cashout_time.to_time %></td>
       </tr>
     <% end %>
   </table>
 <% end %>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+  const offset = new Date().getTimezoneOffset() * -1;
+  const created = document.querySelectorAll('.created')
+  const payout = document.querySelectorAll('.payout')
+  for (let c in created) {
+    created[c].innerHTML = (moment.parseZone(created[c].innerHTML).add('minutes', offset).format('LLL'))
+  }
+  for (let c in payout) {
+    payout[c].innerHTML = (moment.parseZone(payout[c].innerHTML).add('minutes', offset).format('LLL'))
+  }
+});
+</script>
