@@ -1,0 +1,30 @@
+<h4>Posts for <%= @username %></h4>
+<%= @discussions.result.last.keys %>
+
+<table class="bordered">
+  <tr>
+    <th>author</th>
+    <th>category</th>
+    <th>title</th>
+    <th>created</th>
+    <th>active</th>
+    <th>cashout_time</th>
+    <th>total_vote_weight</th>
+    <th>pending_payout_value</th>
+    <th>total_pending_payout_value</th>
+  </tr>
+
+  <% @discussions.result.each do |discussion| %>
+    <tr>
+      <td><%= discussion.author %></td>
+      <td><%= discussion.category %></td>
+      <td><%= discussion.title %></td>
+      <td><%= time_ago_in_words(discussion.created) %></td>
+      <td><%= time_ago_in_words(discussion.active) %></td>
+      <td><%= time_ago_in_words(discussion.cashout_time) %></td>
+      <td><%= discussion.total_vote_weight %></td>
+      <td><%= discussion.pending_payout_value %></td>
+      <td><%= discussion.total_pending_payout_value %></td>
+    </tr>
+  <% end %>
+</table>
