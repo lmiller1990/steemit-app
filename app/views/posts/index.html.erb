@@ -21,9 +21,9 @@
         <td><%= discussion.author %></td>
         <td><%= discussion.category %></td>
         <td><a href="https://steemit.com<%= discussion.url %>"><%= discussion.title %></a></td>
-        <td><%= time_ago_in_words(discussion.created) %></td>
-        <td><%= time_ago_in_words(discussion.active) %></td>
-        <td><%= seconds_to_units(Time.now - discussion.cashout_time.to_time) %></td>
+        <td><%= <%= discussion.created.to_time %></td>
+        <td><%= discussion.active.to_time %></td>
+        <td><%= discussion.cashout_time.to_time %></td>
         <td><%= discussion.cashout_time %></td>
         <td><%= discussion.total_vote_weight %></td>
         <td><%= discussion.pending_payout_value %></td>
