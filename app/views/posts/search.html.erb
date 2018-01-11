@@ -1,0 +1,5 @@
+<%= form_tag '/posts', method: :get do %>
+  <%= label_tag(:followers, "Followers") %>
+  <%= text_field_tag(:followers) %>
+  <%= submit_tag("Search") %>
+<% end %>

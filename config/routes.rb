@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'users/index'
+  get 'posts/search'
   resources :posts, only: [:index]
 
   get 'static_pages/home'
